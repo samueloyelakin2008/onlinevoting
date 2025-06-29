@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Live Election Statistics - Official Voting Platform</title>
+  <style>
+    /* Your CSS styles (same as before) */
+    :root {
+      --primary: #0052cc;
+      --secondary: #2684ff;
+      --accent: #00b8d9;
+      --background: #f0f4ff;
+      --text-dark: #1a1a2e;
+      --text-light: #555a7a;
+      --card-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --border-radius: 12px;
+      --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem 1rem;
+      background: var(--background);
+      font-family: var(--font-family);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    p.subtitle {
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+      text-align: center;
+      max-width: 600px;
+    }
+
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      width: 100%;
+      max-width: 1100px;
+      min-height: 200px;
+    }
+
+    .candidate-card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      box-shadow: 0 6px 15px var(--shadow);
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+
+    .candidate-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px var(--shadow);
+    }
+
+    .candidate-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 4px solid var(--primary);
+      box-shadow: 0 4px 12px rgba(0, 82, 204, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .candidate-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .candidate-description {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+      text-align: center;
+      min-height: 3rem;
+    }
+
+    .vote-count {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 18px;
+      background: #e0e7ff;
+      border-radius: 9px;
+      overflow: hidden;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--accent);
+      width: 0%;
+      border-radius: 9px 0 0 9px;
+      transition: width 1.5s ease;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 0.5rem;
+      color: white;
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 6px rgba(0,184,217,0.6);
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: var(--text-light);
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .candidate-image {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Live Election Statistics</h1>
+  <p class="subtitle">Real-time vote counts and percentages for each candidate. Transparency you can trust.</p>
+
+  <div class="stats-container" id="stats-container">
+    <p>Loading data...</p>
+  </div>
+
+  <footer>© 2025 Official Voting Platform. All rights reserved.</footer>
+
+  <script>
+function _0x3e9b(){const _0x22ab83=['stats-container','votes','Youth\x20empowerment\x20advocate.','776071uffiCN','\x22\x20alt=\x22','mPsHr','get','.progress-fill','reduce','catch','1880840RZtanR','width','Environmental\x20scientist.','Ngozi\x20Eze','https://script.google.com/macros/s/AKfycbz1AS163_TXlxjjbmU46cPU4OCRQYLL2XBMHbH4mydym8uNnkkVfcFSY012dnZjUIgPnA/exec?action=stats','Tunde\x20Okafor','23357730HXjkPr','Fatima\x20Ahmed','Emeka\x20Nwankwo','img.jpg','sfWza','error','Invalid\x20data\x20format','\x22\x20class=\x22candidate-image\x22\x20/>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22candidate-name\x22>','478050xUhUKL','Chinedu\x20Okoro','%</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20','json','Error\x20fetching\x20vote\x20data:','className','Agricultural\x20innovator.','FcWvQ','getElementById','innerHTML','18EwYLGq','Financial\x20inclusion\x20expert.','Infrastructure\x20expert.','TXRfb','141qcdrET','Aisha\x20Mohammed','\x20vote','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22vote-count\x22>','Adeola\x20Johnson','32782TWSsTa','5zmegwV','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22','Transportation\x20engineer.','3481988rBnLhw','name','isArray','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22candidate-description\x22>','then','\x20vote\x20percentage\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22progress-fill\x22\x20style=\x22width:\x200%\x22>','FqQvP','%)</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22progress-bar\x22\x20aria-label=\x22','lezcO','Healthcare\x20specialist.','Segun\x20Olawale','appendChild','div','candidate-card','4573275hukrYk','createElement'];_0x3e9b=function(){return _0x22ab83;};return _0x3e9b();}const _0x524c0c=_0x3ffd;function _0x3ffd(_0x5c8aa8,_0x13b577){const _0x3e9b96=_0x3e9b();return _0x3ffd=function(_0x3ffd04,_0x70dfcd){_0x3ffd04=_0x3ffd04-0x142;let _0x2c1db9=_0x3e9b96[_0x3ffd04];return _0x2c1db9;},_0x3ffd(_0x5c8aa8,_0x13b577);}(function(_0x173ca4,_0x451042){const _0x3e3ac2=_0x3ffd,_0x3cf22d=_0x173ca4();while(!![]){try{const _0x5c966d=-parseInt(_0x3e3ac2(0x153))/0x1+parseInt(_0x3e3ac2(0x17b))/0x2*(-parseInt(_0x3e3ac2(0x176))/0x3)+parseInt(_0x3e3ac2(0x17f))/0x4+-parseInt(_0x3e3ac2(0x17c))/0x5*(parseInt(_0x3e3ac2(0x168))/0x6)+-parseInt(_0x3e3ac2(0x14e))/0x7+-parseInt(_0x3e3ac2(0x15a))/0x8*(parseInt(_0x3e3ac2(0x172))/0x9)+parseInt(_0x3e3ac2(0x160))/0xa;if(_0x5c966d===_0x451042)break;else _0x3cf22d['push'](_0x3cf22d['shift']());}catch(_0x46d42b){_0x3cf22d['push'](_0x3cf22d['shift']());}}}(_0x3e9b,0x6f7a4));const candidatesInfo=[{'id':'1','name':_0x524c0c(0x17a),'description':'Education\x20reform\x20advocate.','image':_0x524c0c(0x163)},{'id':'2','name':_0x524c0c(0x169),'description':'Tech\x20entrepreneur.','image':_0x524c0c(0x163)},{'id':'3','name':_0x524c0c(0x161),'description':_0x524c0c(0x149),'image':_0x524c0c(0x163)},{'id':'4','name':_0x524c0c(0x162),'description':_0x524c0c(0x174),'image':_0x524c0c(0x163)},{'id':'5','name':'Bisi\x20Adeyemi','description':_0x524c0c(0x16e),'image':'img.jpg'},{'id':'6','name':_0x524c0c(0x15f),'description':'Security\x20specialist.','image':_0x524c0c(0x163)},{'id':'7','name':_0x524c0c(0x15d),'description':_0x524c0c(0x152),'image':_0x524c0c(0x163)},{'id':'8','name':'Kunle\x20Adebayo','description':_0x524c0c(0x15c),'image':_0x524c0c(0x163)},{'id':'9','name':_0x524c0c(0x177),'description':_0x524c0c(0x173),'image':_0x524c0c(0x163)},{'id':'10','name':_0x524c0c(0x14a),'description':_0x524c0c(0x17e),'image':'img.jpg'}],container=document[_0x524c0c(0x170)](_0x524c0c(0x150)),scriptURL=_0x524c0c(0x15e);fetch(scriptURL)['then'](_0x228689=>{const _0x4efc96=_0x524c0c,_0x39dc5e={'sfWza':'Network\x20response\x20was\x20not\x20ok'};if(!_0x228689['ok'])throw new Error(_0x39dc5e[_0x4efc96(0x164)]);return _0x228689[_0x4efc96(0x16b)]();})[_0x524c0c(0x144)](_0x5910dc=>{const _0x4b5b34=_0x524c0c,_0x147ef4={'mPsHr':function(_0x4fa105,_0x13d1d6){return _0x4fa105(_0x13d1d6);},'lezcO':_0x4b5b34(0x157),'TXRfb':function(_0x1f0257,_0x53e460){return _0x1f0257*_0x53e460;},'FcWvQ':function(_0x5d5958,_0x6eb3be){return _0x5d5958/_0x6eb3be;},'bNFkl':_0x4b5b34(0x14c)};if(!Array[_0x4b5b34(0x142)](_0x5910dc)){if(_0x5910dc[_0x4b5b34(0x165)])throw new Error(_0x5910dc[_0x4b5b34(0x165)]);else throw new Error(_0x4b5b34(0x166));}container[_0x4b5b34(0x171)]='';const _0x39aae6=new Map();_0x5910dc['forEach'](_0x13cb19=>{const _0x2f1dff=_0x4b5b34;_0x39aae6['set'](_0x13cb19['id'],_0x147ef4[_0x2f1dff(0x155)](Number,_0x13cb19['votes']));});const _0x46063a=_0x5910dc[_0x4b5b34(0x158)]((_0x4c588a,_0x84a783)=>_0x4c588a+Number(_0x84a783[_0x4b5b34(0x151)]),0x0);candidatesInfo['forEach'](_0x33d9f9=>{const _0x36a730=_0x4b5b34,_0x15b983={'dozJy':_0x147ef4[_0x36a730(0x148)]},_0x16ef4a=_0x39aae6[_0x36a730(0x156)](_0x33d9f9['id'])||0x0,_0x2a1ba8=_0x46063a?_0x147ef4[_0x36a730(0x175)](_0x147ef4[_0x36a730(0x16f)](_0x16ef4a,_0x46063a),0x64)['toFixed'](0x1):0x0,_0x437ed9=document[_0x36a730(0x14f)](_0x147ef4['bNFkl']);_0x437ed9[_0x36a730(0x16d)]=_0x36a730(0x14d),_0x437ed9[_0x36a730(0x171)]=_0x36a730(0x17d)+_0x33d9f9['image']+_0x36a730(0x154)+_0x33d9f9[_0x36a730(0x180)]+_0x36a730(0x167)+_0x33d9f9[_0x36a730(0x180)]+_0x36a730(0x143)+_0x33d9f9['description']+_0x36a730(0x179)+_0x16ef4a+_0x36a730(0x178)+(_0x16ef4a!==0x1?'s':'')+'\x20('+_0x2a1ba8+_0x36a730(0x147)+_0x33d9f9['name']+_0x36a730(0x145)+_0x2a1ba8+_0x36a730(0x16a),container[_0x36a730(0x14b)](_0x437ed9),requestAnimationFrame(()=>{const _0x44d8fd=_0x36a730,_0x30f028=_0x437ed9['querySelector'](_0x15b983['dozJy']);_0x30f028['style'][_0x44d8fd(0x15b)]=_0x2a1ba8+'%';});});})[_0x524c0c(0x159)](_0x1c5da7=>{const _0x39e220=_0x524c0c,_0x1bbce5={'FqQvP':_0x39e220(0x16c)};console[_0x39e220(0x165)](_0x1bbce5[_0x39e220(0x146)],_0x1c5da7),container[_0x39e220(0x171)]='<p\x20style=\x22color:\x20red;\x20text-align:center;\x22>Failed\x20to\x20load\x20statistics.\x20Please\x20try\x20again\x20later.</p>';});
+  </script>
+</body>
+</html>
