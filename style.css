@@ -1,4 +1,4 @@
-  :root {
+:root {
     --primary: #0052cc;
     --secondary: #2684ff;
     --accent: #00b8d9;
@@ -21,6 +21,14 @@
     display: flex;
     flex-direction: column;
   }
+:root {
+  --primary: #0052cc;
+  --secondary: #2684ff;
+  --accent: #00b8d9;
+  --white: #fff;
+  --shadow: rgba(9,30,66,.25);
+}
+
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
@@ -54,38 +62,94 @@
 }
 
 header {
+  height: 100vh;
+  width: 100%;
   background: linear-gradient(270deg, var(--primary), var(--secondary), var(--accent), var(--primary));
   background-size: 600% 600%;
   animation: gradientShift 20s ease infinite;
   color: var(--white);
-  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 0 1.5rem;
   box-shadow: 0 4px 15px var(--shadow);
   position: relative;
   overflow: hidden;
 }
 
 header h1 {
-  font-weight: 700;
-  font-size: 3rem;
-  margin-bottom: 0.3rem;
-  letter-spacing: 0.1em;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.12em;
   animation: fadeScaleIn 1.5s ease forwards, floatUpDown 4s ease-in-out infinite;
 }
 
 header p {
-  font-weight: 500;
-  font-size: 1.2rem;
-  opacity: 0.85;
+  font-weight: 600;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
   animation: fadeScaleIn 1.5s ease forwards;
   animation-delay: 0.5s;
   animation-fill-mode: forwards;
-  /* Optional subtle float on subtitle */
   animation-name: fadeScaleIn, floatUpDown;
   animation-duration: 1.5s, 6s;
   animation-timing-function: ease, ease-in-out;
   animation-iteration-count: 1, infinite;
 }
+
+/* Additional info lines styling */
+header .info {
+  font-weight: 500;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  opacity: 0.75;
+  max-width: 600px;
+  line-height: 1.4;
+  animation: fadeScaleIn 1.5s ease forwards;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  margin-top: 0.5rem;
+  color: #dbeeff;
+}
+header .header-nav {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+
+/* Style anchor links as buttons to match the buttons */
+header .header-nav .nav-link-button {
+  background-color: rgba(255 255 255 / 0.15);
+  border: 2px solid var(--white);
+  color: var(--white);
+  padding: 0.6rem 1.5rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+  backdrop-filter: blur(8px);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .header-nav .nav-link-button:hover,
+header .header-nav .nav-link-button:focus {
+  background-color: var(--white);
+  color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 8px var(--white);
+}
+
 
   main.container {
     max-width: 1100px;
@@ -156,6 +220,7 @@ header p {
     margin-bottom: 1.5rem;
     line-height: 1.4;
   }
+  /* Pay Now Button */
   #pay-now-btn {
     margin: 2rem auto 0;
     display: block;
@@ -183,6 +248,7 @@ header p {
     background: var(--accent);
     box-shadow: 0 8px 20px rgba(0,184,217,0.6);
   }
+  /* Paystack badge */
   #paystack-badge {
     margin: 0.8rem auto 0;
     max-width: 320px;
@@ -198,6 +264,7 @@ header p {
     height: 20px;
     margin-left: 6px;
   }
+  /* Modal styles */
   .modal-overlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
