@@ -5,14 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Official Voting Platform</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <header>
-  <h1>Official Voting Platform</h1>
-  <p>Cast your vote securely for ₦100 per candidate</p>
-</header>
+  <div class="flip-container">
+    <h1>Official Voting Platform</h1>
+    <p>Cast your vote securely for ₦100 per candidate</p>
+   <center><div class="info"><br>Trusted, transparent, and easy-to-use election system.<br/>
+      Your voice matters — vote anytime, anywhere.
+    </div></center>
 
+<nav class="header-nav" aria-label="Primary navigation">
+  <a href="#candidates-container" class="nav-link-button" role="button" tabindex="0">Candidates</a>
+  <a href="works.html" class="nav-link-button" role="button" tabindex="0">How It Works</a>
+  <a href="#footer" class="nav-link-button" role="button" tabindex="0">FAQ</a>
+  <a href="https://wa.me/2347035395787" target="_blank" rel="noopener noreferrer" class="nav-link-button" role="button" tabindex="0">Contact</a>
+</nav>
+
+  </div>
+</header>
 <main class="container">
   <div class="candidates-grid" id="candidates-container"></div>
   <button id="pay-now-btn" type="button" disabled>Pay Now</button>
@@ -20,7 +31,7 @@
     Payment powered by Paystack
   </div>
 </main>
-<footer class="site-footer" role="contentinfo">
+<footer id="footer" class="site-footer" role="contentinfo">
   <div class="footer-links" aria-label="Footer navigation">
     <a href="https://wa.me/2347035395787" tabindex="0">Contact Me</a>
     <a href="#" tabindex="0">Privacy Policy</a>
@@ -49,8 +60,5 @@
     </div>
   </div>
 </div>
-
+ <script src="scriptmodule.js"></script> 
 <script src="https://js.paystack.co/v1/inline.js"></script>
-<script src="scriptmodule.js"></script>
-</body>
-</html>
